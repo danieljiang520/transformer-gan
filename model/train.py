@@ -1,5 +1,5 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  
+
 # Licensed under the Apache License, Version 2.0 (the "License").
 # You may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -36,14 +36,14 @@ from utils.helpers import get_fixed_temperature
 
 
 
-from transformers import (
-    BertConfig,
-    BertForMaskedLM,
-    PreTrainedTokenizer,
-    PreTrainedModel,
-    AdamW,
-)
-
+# from transformers import (
+#     BertConfig,
+#     BertForMaskedLM,
+#     PreTrainedTokenizer,
+#     PreTrainedModel,
+#     AdamW,
+# )
+from transformers.optimization import AdamW
 from utils.bleu import BLEU
 from utils.classifier import Classifier
 
