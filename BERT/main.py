@@ -37,7 +37,7 @@ from tqdm import tqdm, trange
 from tokenization_midi import MIDITokenizer as BertTokenizer
 
 from transformers import (
-    AdamW,
+    # AdamW,
     BertConfig,
     BertForMaskedLM,
     PreTrainedModel,
@@ -242,7 +242,7 @@ def train(args, train_dataset, model: PreTrainedModel, tokenizer: PreTrainedToke
         },
         {"params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0},
     ]
-    optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
+    optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
     scheduler = get_cosine_schedule_with_warmup(
         optimizer, num_warmup_steps=args.warmup_steps, num_training_steps=t_total
     )
