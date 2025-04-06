@@ -61,8 +61,8 @@ def augment_note_sequence(ns, stretch_factor, transpose_amount, min_pitch, max_p
             in_place=True)
     except ChordSymbolError:
         print('Transposition of chord symbol(s) failed.')
-    if num_deleted_notes:
-        print('Transposition caused out-of-range pitch(es).')
+    # if num_deleted_notes:
+    #     print('Transposition caused out-of-range pitch(es).')
     return augmented_ns
 
 
