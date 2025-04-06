@@ -36,13 +36,13 @@ from utils.helpers import get_fixed_temperature
 
 
 
-from transformers import (
-    BertConfig,
-    BertForMaskedLM,
-    PreTrainedTokenizer,
-    PreTrainedModel,
-    AdamW,
-)
+# from transformers import (
+#     BertConfig,
+#     BertForMaskedLM,
+#     PreTrainedTokenizer,
+#     PreTrainedModel,
+#     AdamW,
+# )
 from utils.bleu import BLEU
 from utils.classifier import Classifier
 
@@ -431,7 +431,7 @@ if not cfg.DISCRIMINATOR.freeze_discriminator:
                 "weight_decay": 0.0,
             },
         ]
-        dis_optimizer = AdamW(
+        dis_optimizer = torch.optim.AdamW(
             dis_optimizer_grouped_parameters,
             lr=cfg.DISCRIMINATOR.BERT.learning_rate,
             eps=cfg.DISCRIMINATOR.BERT.adam_epsilon,
