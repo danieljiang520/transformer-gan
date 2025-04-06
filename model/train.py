@@ -141,10 +141,11 @@ def parse_args():
     args = parser.parse_args()
     args.local_rank = os.environ['LOCAL_RANK'] if 'LOCAL_RANK' in os.environ else args.local_rank
     print("local rank: ", args.local_rank)
+    print(f"local rank type: {type(args.local_rank)}")
     print("torch cura is available: ", torch.cuda.is_available())
     print(f"device count: {torch.cuda.device_count()}")
     print(f"current device: {torch.cuda.current_device()}")
-    print(f"device name: {torch.cuda.get_device_name(args.local_rank)}") 
+    # print(f"device name: {torch.cuda.get_device_name(args.local_rank)}")
     return args
 
 
