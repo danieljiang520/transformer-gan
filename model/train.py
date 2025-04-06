@@ -119,6 +119,7 @@ def parse_args():
         "--data_dir", type=str, required=True, help="location of the data corpus"
     )
     parser.add_argument("--local_rank", type=int, default=0)
+    parser.add_argument("--local-rank", type=int, default=0)
     parser.add_argument(
         "--work_dir",
         type=str,
