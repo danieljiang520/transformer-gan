@@ -636,6 +636,7 @@ def main():
              "See details at https://nvidia.github.io/apex/amp.html",
     )
     parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
+    parser.add_argument("--local-rank", type=int, default=-1, help="For distributed training: local_rank")
 
     args = parser.parse_args()
 
