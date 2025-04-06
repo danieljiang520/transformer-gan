@@ -36,14 +36,13 @@ from utils.helpers import get_fixed_temperature
 
 
 
-# from transformers import (
-#     BertConfig,
-#     BertForMaskedLM,
-#     PreTrainedTokenizer,
-#     PreTrainedModel,
-#     AdamW,
-# )
-from transformers.optimization import AdamW
+from transformers import (
+    BertConfig,
+    BertForMaskedLM,
+    PreTrainedTokenizer,
+    PreTrainedModel,
+    AdamW,
+)
 from utils.bleu import BLEU
 from utils.classifier import Classifier
 
