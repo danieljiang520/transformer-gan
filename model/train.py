@@ -140,6 +140,7 @@ def parse_args():
     # parser.add_argument('--restart_dir', type=str, default='', help='restart dir')
     args = parser.parse_args()
     args.local_rank = os.environ['LOCAL_RANK'] if 'LOCAL_RANK' in os.environ else args.local_rank
+    args.local_rank = int(args.local_rank)
     print("local rank: ", args.local_rank)
     print(f"local rank type: {type(args.local_rank)}")
     print("torch cura is available: ", torch.cuda.is_available())
