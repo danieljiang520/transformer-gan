@@ -139,7 +139,8 @@ def parse_args():
     parser.add_argument("--save-all", action="store_true", help="Save all checkpoints")
     # parser.add_argument('--restart_dir', type=str, default='', help='restart dir')
     args = parser.parse_args()
-    args.local_rank = os.environ['LOCAL_RANK'] if 'LOCAL_RANK' in os.environ else 0
+    args.local_rank = os.environ['LOCAL_RANK'] if 'LOCAL_RANK' in os.environ else args.local_rank
+    print("local rank: ", args.local_rank)
     return args
 
 
